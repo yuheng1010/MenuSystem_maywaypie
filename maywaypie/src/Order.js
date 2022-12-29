@@ -15,7 +15,7 @@ function Order() {
                 <button className='timebtn'>今日</button>
                 <button className='timebtn'>本周</button>
                 <button className='timebtn'>本月</button>
-                <input type="date"/>
+                <input type="date" style={{borderRadius:"7px", marginLeft:"10px"}}/>
             </div>
             <div className='Detail'>
 
