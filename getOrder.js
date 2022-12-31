@@ -1,3 +1,4 @@
+const { query } = require('./db');
 const pool = require('./db');
 const router = require('express').Router();
 
@@ -28,6 +29,32 @@ router.get("/getTodayOrder",async function (req, res){
     var today=new Date();
     today = today.toISOString().substring(0,10);
     const [result] = await pool.query('SELECT * FROM food_order WHERE SUBSTR(`datetime`,1,10)=?',today)
+    res.send(result)
+})
+
+//取一整週的銷售狀況
+router.get("/getWeekOrder",async function (req,res){
+    var lastWeeek= new Date();
+    lastWeeek.setDate(lastWeeek.getDate()-7)
+    // console.log(lastWeeek)
+    const [result] = await pool.query("SELECT * FROM food_order WHERE `datetime` BETWEEN ? AND ?",[lastWeeek,new Date()])
+    res.send(result)
+})
+
+//取一整月的銷售狀況
+router.get("/getMonthOrder",async function (req,res){
+    var lastMonth= new Date();
+    lastMonth.setMonth(lastMonth.getMonth()-1)
+    console.log(lastMonth)
+    const [result] = await pool.query("SELECT * FROM food_order WHERE `datetime` BETWEEN ? AND ?",[lastMonth,new Date()])
+    res.send(result)
+})
+
+//各品項
+router.get("/getUnitOrder",async function (req,res){
+    var lastMonth= new Date();
+    lastMonth.setMonth(lastMonth.getMonth()-1)
+    const [result] = await pool.query("SELECT * FROM food_order WHERE `datetime` BETWEEN ? AND ?",[lastMonth,new Date()])
     res.send(result)
 })
 
