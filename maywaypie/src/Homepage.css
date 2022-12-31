@@ -62,12 +62,22 @@
     margin-bottom: 10px;
     cursor: pointer;
 }
+.titlehover:hover{
+    transform: scale(1.05);
+}
 .Right{
     margin-left: 25px;
     width: calc(100% - 300px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: #ffffff;
-    border-radius: 10px; */
+}
+a{
+    text-decoration:none;
+    color: #ffffff;
+}
+.hamburger{
+    width: 480px;
+    opacity: 0.5;
+    margin-bottom: 50px;
 }
