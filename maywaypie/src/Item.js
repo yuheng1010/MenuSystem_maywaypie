@@ -11,6 +11,10 @@ function Turnover() {
 
     var today = () => {
         setPeriod(1);
+        fetch("http://localhost:7000/getTodayUnitOrder")
+            .then((result) => result.json())
+            .then((res) => setDetail(res))
+            .catch(error => window.alert(error))
         document.getElementById('today').style.backgroundColor = '#f17014';
         document.getElementById('today').style.color = '#ffffff';
         document.getElementById('week').style.backgroundColor = '#ffffff';
@@ -20,6 +24,10 @@ function Turnover() {
     }
     var week = () => {
         setPeriod(2);
+        fetch("http://localhost:7000/getWeekUnitOrder")
+            .then((result) => result.json())
+            .then((res) => setDetail(res))
+            .catch(error => window.alert(error))
         document.getElementById('week').style.backgroundColor = '#f17014';
         document.getElementById('week').style.color = '#ffffff';
         document.getElementById('today').style.backgroundColor = '#ffffff';
@@ -29,6 +37,10 @@ function Turnover() {
     }
     var month = () => {
         setPeriod(3);
+        fetch("http://localhost:7000/getMonthUnitOrder")
+            .then((result) => result.json())
+            .then((res) => setDetail(res))
+            .catch(error => window.alert(error))
         document.getElementById('month').style.backgroundColor = '#f17014';
         document.getElementById('month').style.color = '#ffffff';
         document.getElementById('week').style.backgroundColor = '#ffffff';
@@ -39,7 +51,7 @@ function Turnover() {
     //bar for day
     var data1 = [{
         type: 'bar',
-        x: [20, 14, 23, 20, 30, 50, 20],
+        x: [detail.danbin, detail.other, detail.noodle, detail.toast, detail.drink, detail.hamburger],
         y: ['蛋餅', '其他', '鐵板麵', '果醬', '飲料', '漢堡'],
         orientation: 'h',
         marker: {
@@ -49,7 +61,7 @@ function Turnover() {
     //bar for week
     var data2 = [{
         type: 'bar',
-        x: [20, 14, 23, 20, 30, 50, 20],
+        x: [detail.danbin, detail.other, detail.noodle, detail.toast, detail.drink, detail.hamburger],
         y: ['蛋餅', '其他', '鐵板麵', '果醬', '飲料', '漢堡'],
         orientation: 'h',
         marker: {
@@ -59,7 +71,7 @@ function Turnover() {
     //bar for month
     var data3 = [{
         type: 'bar',
-        x: [20, 14, 23, 20, 30, 50, 20],
+        x: [detail.danbin, detail.other, detail.noodle, detail.toast, detail.drink, detail.hamburger],
         y: ['蛋餅', '其他', '鐵板麵', '果醬', '飲料', '漢堡'],
         orientation: 'h',
         marker: {
