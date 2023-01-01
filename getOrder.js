@@ -93,16 +93,16 @@ router.get("/getTodayUnitOrder",async function (req,res){
     let drink = 0;
     let hamburger = 0;
     for(var i=0;i<result.length;i++){
-        for(var j=0; j<JSON.parse(result[0].food_name).length;j++){
-            if(JSON.parse(result[0].food_name)[j].includes("蛋餅")){
+        for(var j=0; j<JSON.parse(result[i].food_name).length;j++){
+            if(JSON.parse(result[i].food_name)[j].includes("蛋餅")){
                 danbin++;
-            }else if(JSON.parse(result[0].food_name)[j].includes("吐司")){
+            }else if(JSON.parse(result[i].food_name)[j].includes("吐司")){
                 toast++;
-            }else if(JSON.parse(result[0].food_name)[j].includes("鐵板麵")){
+            }else if(JSON.parse(result[i].food_name)[j].includes("鐵板麵")){
                 noodle++;
-            }else if(JSON.parse(result[0].food_name)[j].includes("飲料")){
+            }else if(JSON.parse(result[i].food_name)[j].includes("茶") || JSON.parse(result[0].food_name)[j].includes("豆漿") || JSON.parse(result[0].food_name)[j].includes("可樂")){
                 drink++;
-            }else if(JSON.parse(result[0].food_name)[j].includes("堡")){
+            }else if(JSON.parse(result[i].food_name)[j].includes("堡")){
                 hamburger++;
             }else{
                 other++;
@@ -132,16 +132,16 @@ router.get("/getWeekUnitOrder",async function (req,res){
     let drink = 0;
     let hamburger = 0;
     for(var i=0;i<result.length;i++){
-        for(var j=0; j<JSON.parse(result[0].food_name).length;j++){
-            if(JSON.parse(result[0].food_name)[j].includes("蛋餅")){
+        for(var j=0; j<JSON.parse(result[i].food_name).length;j++){
+            if(JSON.parse(result[i].food_name)[j].includes("蛋餅")){
                 danbin++;
-            }else if(JSON.parse(result[0].food_name)[j].includes("吐司")){
+            }else if(JSON.parse(result[i].food_name)[j].includes("吐司")){
                 toast++;
-            }else if(JSON.parse(result[0].food_name)[j].includes("鐵板麵")){
+            }else if(JSON.parse(result[i].food_name)[j].includes("鐵板麵")){
                 noodle++;
-            }else if(JSON.parse(result[0].food_name)[j].includes("飲料")){
+            }else if(JSON.parse(result[i].food_name)[j].includes("茶") || JSON.parse(result[0].food_name)[j].includes("豆漿") || JSON.parse(result[0].food_name)[j].includes("可樂")){
                 drink++;
-            }else if(JSON.parse(result[0].food_name)[j].includes("堡")){
+            }else if(JSON.parse(result[i].food_name)[j].includes("堡")){
                 hamburger++;
             }else{
                 other++;
@@ -171,16 +171,16 @@ router.get("/getMonthUnitOrder",async function (req,res){
     let drink = 0;
     let hamburger = 0;
     for(var i=0;i<result.length;i++){
-        for(var j=0; j<JSON.parse(result[0].food_name).length;j++){
-            if(JSON.parse(result[0].food_name)[j].includes("蛋餅")){
+        for(var j=0; j<JSON.parse(result[i].food_name).length;j++){
+            if(JSON.parse(result[i].food_name)[j].includes("蛋餅")){
                 danbin++;
-            }else if(JSON.parse(result[0].food_name)[j].includes("吐司")){
+            }else if(JSON.parse(result[i].food_name)[j].includes("吐司")){
                 toast++;
-            }else if(JSON.parse(result[0].food_name)[j].includes("鐵板麵")){
+            }else if(JSON.parse(result[i].food_name)[j].includes("鐵板麵")){
                 noodle++;
-            }else if(JSON.parse(result[0].food_name)[j].includes("飲料")){
+            }else if(JSON.parse(result[i].food_name)[j].includes("茶") || JSON.parse(result[0].food_name)[j].includes("豆漿") || JSON.parse(result[0].food_name)[j].includes("可樂")){
                 drink++;
-            }else if(JSON.parse(result[0].food_name)[j].includes("堡")){
+            }else if(JSON.parse(result[i].food_name)[j].includes("堡")){
                 hamburger++;
             }else{
                 other++;
