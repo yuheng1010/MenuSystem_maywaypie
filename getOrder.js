@@ -100,7 +100,7 @@ router.get("/getTodayUnitOrder",async function (req,res){
                 toast++;
             }else if(JSON.parse(result[i].food_name)[j].includes("鐵板麵")){
                 noodle++;
-            }else if(JSON.parse(result[i].food_name)[j].includes("茶") || JSON.parse(result[0].food_name)[j].includes("豆漿") || JSON.parse(result[0].food_name)[j].includes("可樂")){
+            }else if(JSON.parse(result[i].food_name)[j].includes("茶") || JSON.parse(result[i].food_name)[j].includes("豆漿") || JSON.parse(result[i].food_name)[j].includes("可樂")){
                 drink++;
             }else if(JSON.parse(result[i].food_name)[j].includes("堡")){
                 hamburger++;
@@ -139,7 +139,7 @@ router.get("/getWeekUnitOrder",async function (req,res){
                 toast++;
             }else if(JSON.parse(result[i].food_name)[j].includes("鐵板麵")){
                 noodle++;
-            }else if(JSON.parse(result[i].food_name)[j].includes("茶") || JSON.parse(result[0].food_name)[j].includes("豆漿") || JSON.parse(result[0].food_name)[j].includes("可樂")){
+            }else if(JSON.parse(result[i].food_name)[j].includes("茶") || JSON.parse(result[i].food_name)[j].includes("豆漿") || JSON.parse(result[i].food_name)[j].includes("可樂")){
                 drink++;
             }else if(JSON.parse(result[i].food_name)[j].includes("堡")){
                 hamburger++;
@@ -178,7 +178,7 @@ router.get("/getMonthUnitOrder",async function (req,res){
                 toast++;
             }else if(JSON.parse(result[i].food_name)[j].includes("鐵板麵")){
                 noodle++;
-            }else if(JSON.parse(result[i].food_name)[j].includes("茶") || JSON.parse(result[0].food_name)[j].includes("豆漿") || JSON.parse(result[0].food_name)[j].includes("可樂")){
+            }else if(JSON.parse(result[i].food_name)[j].includes("茶") || JSON.parse(result[i].food_name)[j].includes("豆漿") || JSON.parse(result[i].food_name)[j].includes("可樂")){
                 drink++;
             }else if(JSON.parse(result[i].food_name)[j].includes("堡")){
                 hamburger++;
