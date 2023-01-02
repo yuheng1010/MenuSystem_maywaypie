@@ -32,7 +32,11 @@ function Order() {
         }
     }, [])
 
-
+function finishOrder(idx){
+    const id = stateData[idx].id
+    fetch(`http://localhost:7000/finishOrder?id=${id}`,{method:"POST"})
+    window.location.reload()
+}
 
 
     return (
@@ -55,10 +59,10 @@ function Order() {
 
                 {stateData.map((inner, index) =>
                         <div className='orderDetail'>
+                            {state=="ing" && <button className='finishBtn' onClick={()=>finishOrder(index)}>OK</button>}
                             <div className='orderId'>{inner.id}</div>
                             <div className='orderName'>{(inner.food_name)}</div>
-                            <div className='orderTP'>{inner.totalPrice}</div>
-                            {/* <div className='orderTP'>{inner.dineWays}</div> */}
+                            <div className='orderTP'>{inner.totalPrice}</div>                    
                             {inner.dineWays==1 && <div className='orderTP'>快取</div>}
                             {inner.dineWays==2 && <div className='orderTP'>外帶</div>}
                             {inner.dineWays==3 && <div className='orderTP'>內用</div>}

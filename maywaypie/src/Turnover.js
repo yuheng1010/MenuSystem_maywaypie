@@ -8,6 +8,17 @@ function Turnover() {
     React.useEffect(() => {
 
     }, []);
+    
+    function searchDate(){
+        setPeriod(1);
+        const date = document.getElementById("start").value
+        console.log(date)
+        fetch(`http://localhost:7000/searchDateOrder?date=${date}`)
+            .then((result) => result.json())
+            .then((res) => setDetail(res))
+            .catch(error => window.alert(error))
+    }
+
     var today = () => {
         setPeriod(1);
         fetch('http://localhost:7000/getTodayOrder')
@@ -149,14 +160,15 @@ function Turnover() {
     };
     var data3 = [trace4, trace5, trace6];
     console.log(detail);
+
     return (
         <React.Fragment>
             <div className='Sdetail'>
                 <button className='timebtn' id='today' onClick={today}>今日</button>
                 <button className='timebtn' id='week' onClick={week}>本周</button>
                 <button className='timebtn' id='month' onClick={month}>本月</button>
-                <input type="date" id="start" />---
-                <input type="date" id="end" />
+                <input type="date" id="start" onChange={searchDate}/>
+                {/* <input type="date" id="end" /> */}
             </div>
             {period == 0 && <div className='Detail' style={{ backgroundColor: '#444444' }}></div>}
             {period == 1 && <div className='Detail0'>
