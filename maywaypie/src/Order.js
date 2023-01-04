@@ -9,21 +9,21 @@ function Order() {
     const [Datetime, setDatetime] = React.useState("");
     React.useEffect(() => {
         if (state == 'ing') {
-            fetch("http://localhost:7000/getCookingOrder")
+            fetch("http://52.8.249.71:7000/getCookingOrder")
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
                     setStateData(data)
                 })
         } else if (state == 'ed') {
-            fetch("http://localhost:7000/getFinishOrder")
+            fetch("http://52.8.249.71:7000/getFinishOrder")
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
                     setStateData(data)
                 })
         } else if (state == 'cancel') {
-            fetch("http://localhost:7000/getCancelOrder")
+            fetch("http://52.8.249.71:7000/getCancelOrder")
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -34,7 +34,7 @@ function Order() {
 
 function finishOrder(idx){
     const id = stateData[idx].id
-    fetch(`http://localhost:7000/finishOrder?id=${id}`,{method:"POST"})
+    fetch(`http://52.8.249.71:7000/finishOrder?id=${id}`,{method:"POST"})
     window.location.reload()
 }
 

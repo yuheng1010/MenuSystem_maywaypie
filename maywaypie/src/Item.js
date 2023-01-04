@@ -13,7 +13,7 @@ function Turnover() {
         setPeriod(1);
         const date = document.getElementById("start").value
         console.log(date)
-        fetch(`http://localhost:7000/searchDateUnitOrder?date=${date}`)
+        fetch(`http://52.8.249.71:7000/searchDateUnitOrder?date=${date}`)
             .then((result) => result.json())
             .then((res) => setDetail(res))
             .catch(error => window.alert(error))
@@ -21,7 +21,7 @@ function Turnover() {
 
     var today = () => {
         setPeriod(1);
-        fetch("http://localhost:7000/getTodayUnitOrder")
+        fetch("http://52.8.249.71:7000/getTodayUnitOrder")
             .then((result) => result.json())
             .then((res) => setDetail(res))
             .catch(error => window.alert(error))
@@ -34,7 +34,7 @@ function Turnover() {
     }
     var week = () => {
         setPeriod(2);
-        fetch("http://localhost:7000/getWeekUnitOrder")
+        fetch("http://52.8.249.71:7000/getWeekUnitOrder")
             .then((result) => result.json())
             .then((res) => setDetail(res))
             .catch(error => window.alert(error))
@@ -47,7 +47,7 @@ function Turnover() {
     }
     var month = () => {
         setPeriod(3);
-        fetch("http://localhost:7000/getMonthUnitOrder")
+        fetch("http://52.8.249.71:7000/getMonthUnitOrder")
             .then((result) => result.json())
             .then((res) => setDetail(res))
             .catch(error => window.alert(error))
