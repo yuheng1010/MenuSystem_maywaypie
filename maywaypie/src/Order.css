@@ -78,21 +78,24 @@
     text-align:center;
 }
 .finishBtn{
-    width: 20px;
-    height: 20px;
+    width: 28px;
+    height: 25px;
     border-radius: 3px;
     border: none;
     background-color: rgb(247, 162, 4);
+    margin-left: 5px;
+    padding: 1pz;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.finishTxt{
     color: rgb(255, 255, 255);
     font-weight: bold;
-    text-align: center;
-    margin-left: 5px;
-    padding: 0%;
 }
-
 .finishBtn:focus{
-    width: 20px;
-    height: 20px;
+    width: 28px;
+    height: 25px;
     border-radius: 3px;
     border: none;
     background-color: rgb(231, 115, 8);

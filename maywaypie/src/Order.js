@@ -59,7 +59,7 @@ function finishOrder(idx){
 
                 {stateData.map((inner, index) =>
                         <div className='orderDetail'>
-                            {state=="ing" && <button className='finishBtn' onClick={()=>finishOrder(index)}>OK</button>}
+                            {state=="ing" && <button className='finishBtn' onClick={()=>finishOrder(index)}><font className='finishTxt'>OK</font></button>}
                             <div className='orderId'>{inner.id}</div>
                             <div className='orderName'>{(inner.food_name)}</div>
                             <div className='orderTP'>{inner.totalPrice}</div>                    
