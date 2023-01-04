@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.de783f84.css",
+    "main.js": "/static/js/main.582f1556.js",
+    "static/media/hamburger.png": "/static/media/hamburger.fa56f8afd6bfffdd2432.png",
+    "index.html": "/index.html",
+    "main.de783f84.css.map": "/static/css/main.de783f84.css.map",
+    "main.582f1556.js.map": "/static/js/main.582f1556.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.de783f84.css",
+    "static/js/main.582f1556.js"
+  ]
+}
